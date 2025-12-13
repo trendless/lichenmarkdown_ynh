@@ -1,1 +1,0 @@
-Allez sur __DOMAIN__/cms/edit.php et connectez-vous avec le nom d'utilisateur « admin » et le mot de passe que vous avez défini pendant le processus d'installation pour voir le panneau d'administration.
