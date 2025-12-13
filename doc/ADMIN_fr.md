@@ -1,0 +1,1 @@
+Allez sur https://__DOMAIN__/admin
