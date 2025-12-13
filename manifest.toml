@@ -33,9 +33,9 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
-    [install.admin_password]
-    type = "password"
-    ask = "What password will you use to login to the admin section?"
+    #[install.admin_password]
+    #type = "password"
+    #ask = "What password will you use to login to the admin section?"
 
 [resources]
     [resources.sources.main]
@@ -56,6 +56,9 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+    admin.url = "/admin"
+    admin.show_tile = true
+    admin.allowed = "admins"
 
     [resources.apt]
     packages = "apache2-utils php8.2-intl, php8.2-mysql, php8.2-gd, php8.2-fileinfo, php8.2-zip, php8.2-ldap, php8.2-fpm, nodejs, npm"
