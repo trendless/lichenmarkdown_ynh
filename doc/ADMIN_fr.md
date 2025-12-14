@@ -1,1 +1,1 @@
-Allez sur https://__DOMAIN__/admin
+Pour accéder au panneau d'administration/CMS : https://__DOMAIN__/admin
