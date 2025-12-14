@@ -33,8 +33,8 @@ chown -R $app:www-data $install_dir/lichen-markdown/dist
 #=================================================
 ynh_script_progression "Upgrading PHP-FPM configuration and fail2ban..."
 
-ynh_script_progression "Configuring fail2ban..."
-ynh_config_add_fail2ban --logpath="/var/log/nginx/$domain-error.log" --failregex='user ".*": password mismatch, client: <HOST>,'
+#ynh_script_progression "Configuring fail2ban..."
+#ynh_config_add_fail2ban --logpath="/var/log/nginx/$domain-error.log" --failregex='user ".*": password mismatch, client: <HOST>,'
 
 # Create a dedicated PHP-FPM config
 ynh_app_setting_set_default --key="php_upload_max_filesize" --value="1G"
@@ -43,16 +43,19 @@ ynh_config_add_phpfpm
 # Create a dedicated NGINX config
 ynh_config_add_nginx
 
-
 #=================================================
 # REAPPLY YWEBSOCKET CONFIGURATION
 #=================================================
 ynh_script_progression "Adding configurations related to yjs-websocket for $app..."
 
 # install node 18 for using yjs websocket 
-nodejs_version=18
-ynh_nodejs_install
-ynh_hide_warnings $nodejs_dir/npm install -g @y/websocket-server
+#nodejs_version=18
+#ynh_nodejs_install
+#ynh_hide_warnings $nodejs_dir/npm install -g @y/websocket-server
+
+pushd "$install_dir"
+	ynh_hide_warnings npm install -g @y/websocket-server
+popd
 
 # Create a dedicated systemd config
 ynh_config_add_systemd --service=$app-y-websocket --template=y-websocket.service
