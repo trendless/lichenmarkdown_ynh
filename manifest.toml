@@ -43,7 +43,7 @@ ram.runtime = "50M"
     sha256 = "76f4ba05ba059cf4974189c77eac06d6a1b1c83023a8da5c44d70161231ad6f6"
     in_subdir = false
     autoupdate.strategy = "latest_forgejo_tag"
-    autoupdate.version_regex = "^yjs(.*).zip$
+    autoupdate.version_regex = "^yjs(.*).zip$"
 
     [resources.ports]
     ysocket.default = 1235
